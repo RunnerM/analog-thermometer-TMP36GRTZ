@@ -36,9 +36,12 @@ void init_timer() {
 }
 
 void init_adc(){
-	DDRK &= ~_BV(PK6);
-	ADMUX |= _BV(REFS0) | _BV(MUX1) | _BV(MUX2);
+	//Set up input input
+	DDRK &= ~_BV(PK7);
+	//ADC set upt to chanel 15
+	ADMUX |= _BV(REFS0) | _BV(MUX0) | _BV(MUX1) | _BV(MUX2);
 	ADCSRB |= _BV(MUX2);
+	//Enable ADC: Div fact:128, interupt enabled, free run...
 	ADCSRA |= _BV(ADEN) | _BV(ADATE) | _BV(ADIE) | _BV(ADPS0) | _BV(ADPS1) | _BV(ADPS2);
 }
 
@@ -56,17 +59,4 @@ ISR(TIMER4_COMPA_vect) {
 	//start measuring on timer interrupt.
 	ADCSRA |= _BV(ADSC);
 }
-
-
-//void init_key( void (*call_back)()){
-	
-//	if (call_back!= 0){
-//		cb= call_back;
-//		init_INT2();
-//		}
-//}
-//ISR(INT2_vect){
-//	if (cb!= 0)
-//	cb();
-//}
 
