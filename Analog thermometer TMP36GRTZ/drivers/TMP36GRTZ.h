@@ -9,7 +9,8 @@
 #ifndef TMP36GRTZ_H_
 #define TMP36GRTZ_H_
 
-void init_termometer(void (*call_back)(uint16_t result));
+void init_termometer(void (*call_back)(float result));
+float calculate_temp(uint16_t sample);
 
 
 

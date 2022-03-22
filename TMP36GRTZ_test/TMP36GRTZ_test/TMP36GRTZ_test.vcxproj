@@ -37,7 +37,6 @@
   </PropertyGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Analog thermometer TMP36GRTZ\drivers\TMP36GRTZ.c" />
-    <ClCompile Include="..\..\Analog thermometer TMP36GRTZ\main.c" />
     <ClCompile Include="fake_avr_sfr.c" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
