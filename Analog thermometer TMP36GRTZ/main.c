@@ -31,7 +31,7 @@ int main(void)
         if (temp < 18) {
             lightbar(0);
         }
-        if (temp > 18 && temp < 25) {
+        if (temp >= 18 && temp <= 25) {
             lightbar(temp-17);
         }
         if (temp > 25) {

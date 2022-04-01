@@ -13,12 +13,12 @@ protected:
 	{}
 };
 
-void dummycalback(float result) {
+void dummycallback(float result) {
 
 }
 
 TEST_F(TMP36GRTZ_test, Test_timer_setup) {
-	init_termometer(dummycalback);
+	init_termometer(dummycallback);
 	EXPECT_EQ(TCCR1A,0);
 	EXPECT_EQ(TCCR1B, 0b00001101);
 	EXPECT_EQ(TCNT1, 0);
